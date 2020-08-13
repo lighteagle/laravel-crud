@@ -20,3 +20,5 @@ Route::get('/location','LocationController@index');
 Route::post('/location/create','LocationController@create');
 Route::get('/location/{id}/edit','LocationController@edit');
 Route::post('/location/{id}/update','LocationController@update');
+Route::get('/location/{id}/delete','LocationController@delete');
+

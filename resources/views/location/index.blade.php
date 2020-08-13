@@ -26,7 +26,9 @@
             <tr>
                 <td>{{$location->code}}</td>
                 <td>{{$location->name}}</td>
-                <td><a href='/location/{{$location->id}}/edit' class='btn btn-warning btn-sm'>Edit </a>{{' | Delete'}}</td>
+                <td><a href='/location/{{$location->id}}/edit' class='btn btn-warning btn-sm'>Edit </a>
+                <a href='/location/{{$location->id}}/delete' class='btn btn-danger btn-sm' 
+                    onClick='return confirm("Yakin mau di-hapus?")'>Delete </a></td>
             </tr>
             @endforeach
         </table>
@@ -42,7 +44,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
+                </div> 
                 <div class="modal-body">
                     <form action='/location/create' method='POST'>
                         {{csrf_field()}}

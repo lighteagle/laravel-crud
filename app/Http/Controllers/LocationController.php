@@ -26,6 +26,11 @@ class LocationController extends Controller
         $location = \App\Location::find($id);
         $location->update($request->all());
         return redirect('/location')->with('sukses','Data berhasil di-update');
-       
+    }
+    public function delete($id)
+    {
+        $location = \App\Location::find($id);
+        $location->delete($location);
+        return redirect('/location')->with('sukses','Data berhasil di-delete');
     }
 }
