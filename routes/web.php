@@ -17,3 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/location','LocationController@index');
+Route::post('/location/create','LocationController@create');

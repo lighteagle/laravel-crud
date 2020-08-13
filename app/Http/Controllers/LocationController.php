@@ -12,4 +12,9 @@ class LocationController extends Controller
 
         return view('location.index',['data_location'=>$data_location]);
     }
+    public function create(Request $request)
+    {
+        \App\Location::create($request->all());
+        return redirect('/location')->with('sukses', 'Data berhasil di-input');
+    }
 }
