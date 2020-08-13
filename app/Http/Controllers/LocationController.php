@@ -6,9 +6,13 @@ use Illuminate\Http\Request;
 
 class LocationController extends Controller
 {
-    public function index(Type $var = null)
+    public function index(Request $request)
     {
-        $data_location = \App\Location::all();
+        if ($request->has('cari')) {
+            $data_location = \App\Location::where('name','LIKE','%'.$request->cari.'%')->get();
+        } else {
+            $data_location = \App\Location::all();
+        }
         return view('location.index',['data_location'=>$data_location]);
     }
     public function create(Request $request)
@@ -33,4 +37,5 @@ class LocationController extends Controller
         $location->delete($location);
         return redirect('/location')->with('sukses','Data berhasil di-delete');
     }
+
 }

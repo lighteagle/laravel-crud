@@ -3,7 +3,14 @@
 @section('content')
     <h1>Location</h1>   
     <div class="row">
-        <div class="col-12">
+        <div class="col-6">
+            <form class='form-inline my-2-my-lg-0' method='GET' action='/location'>
+                <input name='cari' class='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search'>
+                <button class='btn btn-outline-success my-2 my-sm-0s'>Search</button>
+
+            </form>
+        </div>
+        <div class="col-6">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
             Add Location
