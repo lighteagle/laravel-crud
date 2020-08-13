@@ -24,10 +24,10 @@
             </div>
             <!-- Alert Data -->
             @if(session('sukses'))
-                <div class="alert alert-success" role="alert">
-                    Data Berhasil di-Input
-                </div>
-            @endif
+            <div class="alert alert-success" role="alert">
+                {{session('sukses')}}
+            </div>
+        @endif
             <table class='table table-hover'>
                 <tr>
                     <th>Code</th>
@@ -39,7 +39,7 @@
                 <tr>
                     <td>{{$location->code}}</td>
                     <td>{{$location->name}}</td>
-                    <td><a href='#' class='btn btn-warning btn-sm'>Edit </a>{{' | Delete'}}</td>
+                    <td><a href='/location/{{$location->id}}/edit' class='btn btn-warning btn-sm'>Edit </a>{{' | Delete'}}</td>
                 </tr>
                 @endforeach
             </table>

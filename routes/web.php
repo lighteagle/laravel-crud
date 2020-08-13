@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 Route::get('/location','LocationController@index');
 Route::post('/location/create','LocationController@create');
+Route::get('/location/{id}/edit','LocationController@edit');
+Route::post('/location/{id}/update','LocationController@update');
